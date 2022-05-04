@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug Current TS Tests File",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "node",
+        "program": "${workspaceRoot}/node_modules/.bin/jest",
+        "runtimeArgs": [],
+        "args": ["--force-exit", "${relativeFile}"],
+        "cwd": "${workspaceRoot}",
+        "internalConsoleOptions": "openOnSessionStart",
+        "skipFiles": ["<node_internals>/**", "node_modules/**"],
+        "protocol": "inspector",
+        "sourceMaps": true,
+        "outputCapture": "std",
+        "env": { "NODE_ENV": "development" }
+      }
+    ]
+  }

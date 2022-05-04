@@ -1,0 +1,45 @@
+// {
+//   "version": "0.2.0",
+//   "configurations": [
+//     {
+//       "name": "Current TS File",
+//       "type": "node",
+//       "request": "launch",
+//       "runtimeExecutable": "node",
+//       "runtimeArgs": [
+//         "--nolazy",
+//         "-r",
+//         "ts-node/register/transpile-only",
+//         "--require=dotenv/config"
+//       ],
+//       "args": ["${relativeFile}"],
+//       "cwd": "${workspaceRoot}",
+//       "internalConsoleOptions": "openOnSessionStart",
+//       "skipFiles": ["<node_internals>/**", "node_modules/**"],
+//       "sourceMaps": true,
+//       "env": { "NODE_ENV": "production", "JOB": "DEX_JOB" }
+//     }
+//   ]
+// }
+
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Current TS Tests File",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "node",
+      "program": "${workspaceRoot}/node_modules/.bin/jest",
+      "runtimeArgs": [],
+      "args": ["--force-exit", "${relativeFile}"],
+      "cwd": "${workspaceRoot}",
+      "internalConsoleOptions": "openOnSessionStart",
+      "skipFiles": ["<node_internals>/**", "node_modules/**"],
+      "protocol": "inspector",
+      "sourceMaps": true,
+      "outputCapture": "std",
+      "env": { "NODE_ENV": "development" }
+    }
+  ]
+}
